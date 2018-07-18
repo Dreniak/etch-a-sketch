@@ -5,6 +5,7 @@
 .container {
     width: 50vw;
     height: 50vw;
+    background-color: black;
     display: flex;
     flex-flow: column;
 }
@@ -21,7 +22,8 @@
 
 .gridBox {
     flex-grow: 1;
-    border-left: 1px solid #bbb; 
+    border-left: 1px solid #bbb;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .gridBox:last-child {

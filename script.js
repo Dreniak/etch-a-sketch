@@ -1,16 +1,7 @@
 var container = document.querySelector(".container");
-var gridSize = prompt();
+var gridSize = 16;//prompt();
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-for (x = 0; x < gridSize; x++) { //Creates lines
+for (let x = 0; x < gridSize; x++) { //Creates lines
     var gridLine = document.createElement("div");
     gridLine.classList.add("gridLine");
     for (n = 0; n < gridSize; n++) { //Creates cells inside lines
@@ -20,10 +11,21 @@ for (x = 0; x < gridSize; x++) { //Creates lines
     }
     container.appendChild(gridLine);
 }
+
 var gridBoxes = document.querySelectorAll(".gridBox");
-console.log(gridBoxes);
 gridBoxes.forEach((box) => {
+    box.randomColor = randomColor(box);
+    box.opacity = 11;
 	box.addEventListener("mouseover", () => {
-		box.style.cssText = `background-color: #000;`;
+        if (box.opacity == 0) return;
+        box.opacity--;
+        box.style.cssText = `${box.randomColor} ${box.opacity/10}`;
 	})
 });
+
+function randomColor (box) {
+    let red = Math.floor(Math.random()*255+1);
+    let blue = Math.floor(Math.random()*255+1);
+    let green = Math.floor(Math.random()*255+1);
+    return box.style.cssText = `background-color: rgba(${red}, ${blue}, ${green},`;
+}
