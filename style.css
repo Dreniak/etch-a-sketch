@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    flex-flow: column;
+}
+.gridLine {
+    display: flex;
+    flex-flow: row;
+    flex-grow: 1;
+    border-top: 1px solid #bbb;
+}
+
+.gridLine:last-child {
+    border-bottom: 1px solid #bbb;
+}
+
+.gridBox {
+    flex-grow: 1;
+    border-left: 1px solid #bbb; 
+}
+
+.gridBox:last-child {
+    border-right: 1px solid #bbb;
+}
