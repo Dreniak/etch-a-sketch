@@ -2,9 +2,58 @@
     box-sizing: border-box;
 }
 
-.container {
-    width: 50vw;
-    height: 50vw;
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.content {
+    height: 100vh;
+    background: linear-gradient(#1e2c38, #334a5e);
+    display: flex;
+}
+
+.sketch-border {
+    position: relative;
+    height: 70vh;
+    width: 64vh;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    background-color: #3b7dbb;
+    border-radius: 5vh;
+    box-shadow: .8vh .8vh rgba(0, 0, 0, 0.342);
+}
+
+#reset {
+    position: absolute;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 100%;
+    align-self: center;
+    bottom: 2.5vh;
+    box-shadow: .5vh .5vh #1e2c38;
+}
+
+#reset:active {
+    height: 4.7vh;
+    width: 4.7vh;
+    background: linear-gradient(#969696, #dfdfdf);
+}
+
+#reset img {
+    margin-top: .5vh;
+    opacity: .8;
+}
+
+/*sketch setup*/
+.etch-a-sketch {
+    position: relative;
+    margin: auto;
+    width: 50vh;
+    height: 50vh;
     background-color: black;
     display: flex;
     flex-flow: column;
