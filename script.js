@@ -77,6 +77,8 @@ function callGrid () {
     createGrid();
     drawBoxes();
     getStyles();
+    toggleColor.checked = true;
+    toggleGrid.checked = true;
 }
 
 function createGrid() {
