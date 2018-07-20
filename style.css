@@ -29,6 +29,9 @@ button {
 
 #reset {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 5vh;
     width: 5vh;
     border-radius: 100%;
@@ -44,8 +47,89 @@ button {
 }
 
 #reset img {
-    margin-top: .5vh;
+    position: absolute; 
     opacity: .8;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.toggle-grid {
+    position: absolute;
+    bottom: 5.5vh;
+    right: 13vh;
+}
+
+.toggle-color {
+    position: absolute;
+    bottom: 5.5vh;
+    left: 10vh;
+}
+
+.toggle-grid > p {
+    position: relative;
+    left: 1.4vh;
+    bottom: .5vh;
+    font: bold .8em arial;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.toggle-color > p {
+    position: relative;
+    left: .4vh;
+    bottom: .5vh;
+    font: bold .8em arial;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.toggle-color > input, .toggle-grid > input {
+    display: none;
+}
+
+.toggle-color > label, .toggle-grid > label {
+    position: absolute;
+    height: 3vh;
+    width: 7vh;
+    background: #898989;
+    border-radius: 70vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-color > label:after, .toggle-grid > label:after {
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+}
+
+.toggle-color > label:active:after, .toggle-grid > label:active:after {
+    transform: scale(1.15, 0.85);
+}
+
+.toggle-color > input:checked ~ label, .toggle-grid > input:checked ~ label {
+    background: #6fbeb5;
+}
+
+.toggle-color > input:checked ~ label:after, .toggle-grid > input:checked ~ label:after {
+    right: 0;
 }
 
 /*sketch setup*/
